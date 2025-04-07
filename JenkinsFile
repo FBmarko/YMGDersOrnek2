@@ -10,13 +10,13 @@ pipeline {
 
         stage('Docker Image Olustur') {
             steps {
-                sh 'docker build -t ymg-ders-test .'
+                bat 'docker build -t ymg-ders-test .'
             }
         }
 
         stage('Container Calistir') {
             steps {
-                sh 'docker run --rm ymg-ders-test'
+                bat 'docker run --rm ymg-ders-test'
             }
         }
     }
