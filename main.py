@@ -1,5 +1,5 @@
 def say_hello():
-    print("Merhaba Dünya!")
+    print("Merhaba Dunya!")
 
 if __name__ == "__main__":
     say_hello()
