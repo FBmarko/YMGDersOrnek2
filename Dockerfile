@@ -1,20 +1,15 @@
-# Use the official Python image as the base image
+# Resmi Python imajını kullan
 FROM python:3.9-slim
 
-# Set the working directory in the container
+# Çalışma dizinini ayarla
 WORKDIR /app
 
-# Copy the current directory contents into the container
-COPY . /app
-
-# Install any needed packages specified in requirements.txt
+# Bağımlılıkları kopyala ve yükle
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Make port 5000 available to the world outside this container
-EXPOSE 80
+# Uygulama dosyalarını kopyala
+COPY . .
 
-# Define environment variable
-ENV PYTHONUNBUFFERED=1
-
-# Run the application
-CMD ["python", "main.py"]
+# Uygulamayı çalıştır
+CMD ["python", "app.py"]
